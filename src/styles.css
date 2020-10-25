@@ -1,1 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      font-family: sans-serif;
+  }
+  
+  .container {
+    display:flex;
+    flex-flow:row wrap;
+  }
+  
+  app-header, 
+  app-nav, 
+  app-main, 
+  app-aside, 
+  app-footer {
+    padding: 0px;
+    margin:0px;
+  }
+  
+  app-header {
+    order:1;
+    height:100px;
+    flex:0 1 100%;
+    background: rgb(0, 100, 0);
+  }
+  
+  app-nav {
+    order:2;
+    flex: 0 1 200px;
+    background: rgb(16, 89, 82);
+  }
+  
+  app-main,
+  app-thelist,
+  app-minimalist {
+    order:3;
+    flex: 1;
+    min-height:500px;
+    background: rgb(0, 45, 45);
+  }
+  
+  app-aside {
+    order:4;
+    flex:0 1 200px;
+    background: rgb(16, 89, 82);
+  }
+  
+  app-footer {
+    order:5;
+    height:100px;
+    flex:0 1 100%;
+    background: rgb(0, 17, 17);
+  }
+
+  @media (max-width: 768px) {
+    app-header, 
+    app-nav, 
+    app-main, 
+    app-aside, 
+    app-footer {
+      flex: unset;
+      width: 100%;
+    }
+  }

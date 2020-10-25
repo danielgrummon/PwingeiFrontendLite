@@ -1,23 +1,12 @@
-  
-<div class="app">
-  <header>
-    <section>
-      <h1>{{ title }}</h1>
-    </section>
-    <nav>
-      <ul>
-     <!--   <li><a routerLink="/">The List</a></li> -->
-        <li><a routerLink="/TheList">The List</a></li>
-      </ul>
-    </nav>
-  </header>
+<!--recommend CSS-grid and Flex-box and Angular’s Breakpoint Observer -->  
+<div class="container">
+  <app-header></app-header>
 
-  <main>
-    <router-outlet></router-outlet>
-  </main>
+  <app-nav></app-nav>
 
-  <footer>
-    <b>Hurray</b>
-  </footer>
+  <router-outlet></router-outlet>
 
+  <app-aside></app-aside>
+
+  <app-footer></app-footer>
 </div>
