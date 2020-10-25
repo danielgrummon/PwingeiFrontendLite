@@ -1,11 +1,9 @@
 const express = require('express');
 const path = require('path');
-const ngApp = express();
-ngApp.use(express.static('./dist/pwingei-frontend-lite'));
+const app = express();
+app.use(express.static('./src'));
+app.get('/*', function(req,res) {
+res.sendFile(path.join(__dirname,'/src/index.html'));
+});
 
-app.get('*', function (req, res) {
-    const index = path.join(__dirname, 'src', 'index.html');
-    res.sendFile(index);
-  });
-
-ngApp.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 8080);
