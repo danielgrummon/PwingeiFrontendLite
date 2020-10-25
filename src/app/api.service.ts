@@ -19,6 +19,7 @@ export class ApiService {
   };
   
   getPhenotypeList(): Observable<Phenotype[]>{
-    return this.httpClient.get<Phenotype[]>("https://pwingei-backend.herokuapp.com/app/rest/wingei/pwingei");    
-  }
+    console.log("service retrieving list");  
+    return this.httpClient.get<Phenotype[]>("https://pwingei-backend.herokuapp.com/app/rest/wingei/pwingei");
+     }
 }
