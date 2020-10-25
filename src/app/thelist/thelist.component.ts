@@ -18,12 +18,14 @@ export class ThelistComponent implements OnInit {
   }
 
   getPhenotypeList(){
+    console.log("component retrieving list");
     this.apiService.getPhenotypeList().subscribe(
       response => {
         console.log(response);
         this.phenotype = response;
       }
     )
+    console.log("component retrieved list");
   }
 
 }
