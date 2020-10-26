@@ -8,7 +8,7 @@ import { MainComponent } from './main/main.component';
 
 
 const routes: Routes = [
- // { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: MainComponent },
   { path: 'list', component: ThelistComponent },
   { path: 'minimalist', component: MinimalistComponent }
