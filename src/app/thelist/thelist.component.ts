@@ -9,19 +9,19 @@ import { Phenotype } from './thelist.model';
 })
 export class ThelistComponent implements OnInit {
 
-  phenotypes : Phenotype[];
+  phenotypes: Phenotype[];
   errorMessage: string;
 
-  constructor(private apiService : ApiService) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
     this.getPhenotypeList();
   }
 
-  getPhenotypeList(){
+  getPhenotypeList() {
     this.apiService.getPhenotypeList().subscribe({
       next: phenotypes => this.phenotypes = phenotypes,
-    error: err => this.errorMessage = err
+      error: err => this.errorMessage = err
     });
   }
 
