@@ -9,7 +9,8 @@ import { Phenotype } from './thelist.model';
 })
 export class ThelistComponent implements OnInit {
 
-  phenotype : Phenotype[];
+  phenotypes : Phenotype[];
+  errorMessage: string;
 
   constructor(private apiService : ApiService) { }
 
@@ -18,14 +19,10 @@ export class ThelistComponent implements OnInit {
   }
 
   getPhenotypeList(){
-    console.log("component retrieving list");
-    this.apiService.getPhenotypeList().subscribe(
-      response => {
-        console.log(response);
-        this.phenotype = response;
-      }
-    )
-    console.log("component retrieved list");
+    this.apiService.getPhenotypeList().subscribe({
+      next: phenotypes => this.phenotypes = phenotypes,
+    error: err => this.errorMessage = err
+    });
   }
 
 }
